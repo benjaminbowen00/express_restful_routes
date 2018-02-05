@@ -101,7 +101,8 @@ UI.prototype = {
     for(var film of films) {
       var li = document.createElement("li");
       this.appendText(li, film.title, "Film: ");
-      
+      this.appendText(li, film.genre, "Genre: ");
+
       for(var review of film.reviews){
         this.createReview(li, review);
       }
@@ -111,6 +112,7 @@ UI.prototype = {
 }
 
 module.exports = UI;
+
 
 /***/ }),
 /* 1 */
@@ -133,6 +135,7 @@ var Film = function(options){
   this.title = options.title;
   this.actors = options.actors;
   this.reviews = options.reviews || [];
+  this.genre = options.genre;
 }
 
 Film.prototype = {
@@ -142,6 +145,7 @@ Film.prototype = {
 }
 
 module.exports = Film;
+
 
 /***/ }),
 /* 3 */
@@ -166,12 +170,14 @@ var Films = function(){
 
   var film1 = new Film({
     title: "Now You See Me",
-    actors: ["Woody Harrelson", "Jesse Eisenberg"]
+    actors: ["Woody Harrelson", "Jesse Eisenberg"],
+    genre: "magic"
   });
 
   var film2 = new Film({
     title: "Star Wars Episode IV: A New Hope",
-    actors: ["Harrison Ford", "Alec Guiness"]
+    actors: ["Harrison Ford", "Alec Guiness"],
+    genre: "sci-fi"
   });
 
   film1.addReview(review1);
@@ -181,6 +187,7 @@ var Films = function(){
 }
 
 module.exports = Films;
+
 
 /***/ }),
 /* 4 */

@@ -37,11 +37,16 @@ filmRouter.delete('/:id', function(req, res){
   res.json({data: films});
 });
 
+//show reviews (for one film)
+filmRouter.get('/:id/reviews', function(req, res){
+  res.json(films[req.params.id].reviews)
+})
 
-//create
-filmRouter.post('/films/:id/reviews', function(req, res){
-  films.reviews.push(req.body);
-  res.json({data: films});
+
+//create another review for a particular film
+filmRouter.post('/:id/reviews', function(req, res){
+  films[req.params.id].reviews.push(req.body);
+  res.json(films);
 })
 
 
