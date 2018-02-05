@@ -133,9 +133,9 @@ window.addEventListener('load', app);
 
 var Film = function(options){
   this.title = options.title;
+  this.genre = options.genre;
   this.actors = options.actors;
   this.reviews = options.reviews || [];
-  this.genre = options.genre;
 }
 
 Film.prototype = {
@@ -171,7 +171,7 @@ var Films = function(){
   var film1 = new Film({
     title: "Now You See Me",
     actors: ["Woody Harrelson", "Jesse Eisenberg"],
-    genre: "magic"
+    genre: "thriller"
   });
 
   var film2 = new Film({

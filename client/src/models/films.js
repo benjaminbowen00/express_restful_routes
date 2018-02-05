@@ -18,7 +18,7 @@ var Films = function(){
   var film1 = new Film({
     title: "Now You See Me",
     actors: ["Woody Harrelson", "Jesse Eisenberg"],
-    genre: "magic"
+    genre: "thriller"
   });
 
   var film2 = new Film({
